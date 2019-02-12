@@ -5,6 +5,7 @@
 void jack_bauer(void)
 {
 	int min2, min1, hour2, hour1 = 0, limit;
+
 	while (hour1 <= 2)
 	{
 		hour2 = 0;
