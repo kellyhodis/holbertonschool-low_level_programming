@@ -9,7 +9,7 @@ int main(void)
 	char Holberton[10] = "Holberton\n";
 	int i = 0;
 
-	while (i != 30)
+	while (i <= 10)
 	{
 	_putchar(Holberton[i]);
 	i++;
