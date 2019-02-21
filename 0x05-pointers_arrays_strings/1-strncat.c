@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* _strcat - concatenates two strings
+* _strncat - concatenates two strings with limit
 * @src: string to be appended
 * @dest: string to append to
 * @n: limit to size of src variable for appending
