@@ -8,15 +8,5 @@
 */
 int _strcmp(char *s1, char *s2)
 {
-	int value1, value2, count;
-	
-	value1 = 0;
-	for (count = 0; s1[count] != '\0'; count++)
-		value1 += s1[count];
-	
-	value2 = 0;
-	for (count = 0; s2[count] != '\0'; count++)
-		value2 += s2[count];
-
-	return (value1 - value2);
+	return (*s1 - *s2);
 }
