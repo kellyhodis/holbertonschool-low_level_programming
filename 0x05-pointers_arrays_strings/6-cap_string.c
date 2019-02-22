@@ -17,7 +17,7 @@ char *cap_string(char *s)
 		{
 			if (a2[j] == s[i])
 			{
-				if (s[i + 1] > 96 && s[i + 1] < 123)
+				if (s[i + 1] >= 'a' && s[i + 1] < 'z')
 					s[i + 1] -= 32;
 			}
 		}
@@ -26,7 +26,7 @@ char *cap_string(char *s)
 		{
 			if (a1[j] == s[i])
 			{
-				if (s[i + 1] > 96 && s[i + 1] < 123)
+				if (s[i + 1] > 'a' && s[i + 1] < 'z')
 					s[i + 1] -= 32;
 			}
 		}
