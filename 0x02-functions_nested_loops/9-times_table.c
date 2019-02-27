@@ -14,21 +14,22 @@ void times_table(void)
 		{
 			if (j * i < 10)
 			{
-				_putchar(' ');
+				if (j != 0)
+					_putchar(' ');
 				_putchar(j * i + '0');
 			}
 			else
 			{
-				first_dig = j * i / 10;	
+				first_dig = j * i / 10;
 				_putchar(first_dig + '0');
 				_putchar(j * i % 10 + '0');
 			}
 			if (j != 9)
-			{	
+			{
 				_putchar(',');
-				_putchar(' ');	
-			}	
+				_putchar(' ');
+			}
 		}
 		_putchar('\n');
-	}	
+	}
 }
