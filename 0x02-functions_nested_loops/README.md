@@ -20,6 +20,6 @@ This is a project folder for C programs using functions and nested loops.
 
 9-times_table.c - A program that has a function that prints the 9 times table, starting with 0.
 
-10-add.c - A program that has a function that adds two inteers and returns the result.
+10-add.c - A program that has a function that adds two integers and returns the result.
 
 11-print_to_98.c - A program that has a function that prints all natural numbers from n to 98, followed by a new line. 
