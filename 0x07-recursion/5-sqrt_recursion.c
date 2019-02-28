@@ -8,11 +8,11 @@
 */
 int _sqrt(int n, int x)
 {
-        if (x * x == n)
-                return (x);
-        else if (x < 1)
-                return (-1);
-        return (_sqrt(n, x - 1));
+	if (x * x == n)
+		return (x);
+	else if (x < 0)
+		return (-1);
+	return (_sqrt(n, x - 1));
 }
 /**
 * _sqrt_recursion - function for finding the square root of variable
@@ -22,7 +22,7 @@ int _sqrt(int n, int x)
 */
 int _sqrt_recursion(int n)
 {
-        if (n < 1)
-                return (-1);
-        return (_sqrt(n, n));
+	if (n < 1)
+		return (-1);
+	return (_sqrt(n, n));
 }
