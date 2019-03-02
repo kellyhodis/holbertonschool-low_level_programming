@@ -10,11 +10,11 @@ void three_dig(int n)
 	_putchar(',');
 	_putchar(' ');
 	_putchar(n / 100 + '0');
-	if ((n % 100) / 10 <= 0)
+	if ((n / 10) % 10 <= 0)
 		_putchar('0');
 	else
 		_putchar((n % 100) / 10 + '0');
-	_putchar(n % 10);
+	_putchar(n % 10 + '0');
 }
 /**
 * print_times_table - prints the n times table, starting with 0
@@ -24,7 +24,7 @@ void three_dig(int n)
 */
 void print_times_table(int n)
 {
-	int i, j;
+	int i, j, product;
 
 	if (n >= 0 && n <= 15)
 	{
@@ -32,17 +32,18 @@ void print_times_table(int n)
 		{
 			for (j = 0; j <= n; j++)
 			{
-				if (i * j > 99)
+				product = i * j;
+				if (product > 99)
 				{
-					three_dig(i * j);
+					three_dig(product);
 				}
-				else if (i * j / 10 > 0)
+				else if (product / 10 > 0)
 				{
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
-					_putchar(i * j / 10 + '0');
-					_putchar((i * j) % 10 + '0');
+					_putchar(product / 10 + '0');
+					_putchar((product) % 10 + '0');
 				}
 				else if (j != 0)
 				{
@@ -50,10 +51,10 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(' ');
-					_putchar(i * j % 10 + '0');
+					_putchar(product % 10 + '0');
 				}
 				else
-					_putchar(i * j % 10 + '0');
+					_putchar(product % 10 + '0');
 			}
 			_putchar('\n');
 		}
