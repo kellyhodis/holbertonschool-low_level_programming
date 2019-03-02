@@ -3,9 +3,9 @@
 * main - computes and prints the sum of all the multiples of
 * of 3 or 5 below 1024 (excluded), followed by a new line
 *
-* Return: nothing
+* Return: 0
 */
-void main(void)
+int main(void)
 {
 	int i = 0, count = 0;
 
@@ -18,4 +18,5 @@ void main(void)
 		i++;
 	}
 	printf("%d\n", count);
+	return (0);
 }
