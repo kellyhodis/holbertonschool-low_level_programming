@@ -11,9 +11,9 @@ int main(void)
 	int count;
 
 	n = 1, m = 2, count = 0;
-	while (count <= 50)
+	while (count <= 48)
 	{
-		if (count == 50)
+		if (count == 48)
 			printf("%ld", n);
 		else
 			printf("%ld, ", n);
