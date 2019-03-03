@@ -2,7 +2,7 @@
 /**
 * main - prints its name followed by a new line
 * @argc: argument count
-* @argv: argument vector; arg[0]
+* @argv: argument vector
 *
 * Return: 0
 */
