@@ -14,9 +14,9 @@ int main(void)
 	while (count <= 48)
 	{
 		if (count == 48)
-			printf("%ld", n);
+			printf("%lu", n);
 		else
-			printf("%ld, ", n);
+			printf("%lu, ", n);
 		hold = n + m;
 		n = m;
 		m = hold;
