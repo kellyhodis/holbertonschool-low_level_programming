@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 				num[j] = num[j] * 10 + argv[j][i] - '0';
 			}
 			else if (argv[j][i] == '-')
-				flag[j] = 1;	
+				flag[j] = 1;
 			else if (argv[j][i] > '9' || argv[j][i] < '0')
 			{
 				printf("Error\n");
