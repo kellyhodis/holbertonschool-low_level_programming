@@ -16,11 +16,7 @@ int main(int argc, char *argv[])
 		for (i = 0; argv[j][i] != '\0'; i++)
 		{
 			if (argv[j][i] <= '9' && argv[j][i] >= '0')
-			{
-				printf("element = %d\n", argv[j][i] - '0');
 				num = num * 10 + argv[j][i] - '0';
-				printf("num = %d\n", num);
-			}
 			else if (argv[j][i] > '9' || argv[j][i] < '0')
 			{
 				printf("Error\n");
