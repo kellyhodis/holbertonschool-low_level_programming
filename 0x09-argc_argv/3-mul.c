@@ -5,7 +5,7 @@
 * @argc: argument count
 * @argv: argument vector
 *
-* Return: sum of two positive numbers or 1 if error
+* Return: 0 if success or 1 if error
 */
 int main(int argc, char *argv[])
 {
@@ -35,5 +35,5 @@ int main(int argc, char *argv[])
 	}
 	product = num[1] * num[2];
 	printf("%d\n", product);
-	return (product);
+	return (0);
 }
