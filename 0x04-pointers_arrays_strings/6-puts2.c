@@ -6,12 +6,28 @@
 */
 void puts2(char *str)
 {
-	int i;
+	int i, length;
 
-	for (i = 0; str[i] != '\0'; i += 2)
+	length = _strlen(str);
+	for (i = 0; i < length; i += 2)
 	{
 		if (i % 2 == 0)
 			_putchar(str[i]);
 	}
 	_putchar('\n');
+}
+/**
+* _strlen - returns the length of a string
+* @s: input string
+*
+* Return: 0
+*/
+int _strlen(char *s)
+{
+	int length;
+
+	for (length = 0; s[length] != '\0'; length++)
+	{
+	}
+	return (length);
 }
