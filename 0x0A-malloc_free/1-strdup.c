@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 int _strlen(char *s);
 /**
@@ -17,7 +16,6 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	length = _strlen(str);
-	printf("length = %d\n", length);
 	dup = malloc(sizeof(char) * length + 1);
 	if (!dup)
 		return (NULL);
