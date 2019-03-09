@@ -24,7 +24,6 @@ char *_strdup(char *str)
 	for (i = 0; i < length; i++)
 		dup[i] = str[i];
 	return (dup);
-	
 }
 /**
 * _strlen - returns the length of a string
