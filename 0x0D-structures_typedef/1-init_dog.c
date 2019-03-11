@@ -1,5 +1,4 @@
 #include "dog.h"
-#include "holberton.h"
 /**
 * init_dog - initializes a variable of type struct dog
 * @d: variable holding dog struct
