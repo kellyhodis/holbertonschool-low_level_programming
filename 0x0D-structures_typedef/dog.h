@@ -7,8 +7,8 @@
 * @owner: name of owner of dog
 *
 * Description: creates instances of a dog
-*/ 
-struct dog 
+*/
+struct dog
 {
 	char *name;
 	float age;
