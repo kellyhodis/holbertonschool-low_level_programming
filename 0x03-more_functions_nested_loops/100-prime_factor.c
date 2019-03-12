@@ -17,6 +17,7 @@ int main(void)
 		{
 			number /= i;
 			flag = i;
+			i = 2;
 		}
 	}
 	printf("%ld\n", flag);
