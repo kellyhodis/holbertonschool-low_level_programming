@@ -11,7 +11,7 @@ int main(void)
 	long flag = 0, i;
 	long number = 612852475143;
 
-	for (i = 2; i < number; i++)
+	for (i = 2; i <= number; i++)
 	{
 		if (number % i == 0)
 		{
