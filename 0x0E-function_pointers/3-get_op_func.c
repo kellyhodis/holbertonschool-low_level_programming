@@ -6,7 +6,7 @@
 *
 * Return: function pointer
 */
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int a, int b)
 {
 	int i;
 	op_t ops[] = {
@@ -17,30 +17,11 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	
-		
-	if (o == '+' || o == '-' || o == '*')
+	while (i < 6)
 	{
-		if (o == '+')
-			return (
+		if (s[0] == ops[i][0])
+			return((*ops[i][1])(a, b));
+		i++;
 	}
-	else if (o == '/' || o == '%')
-	{
-		if (int2 == 0)
-		{
-			printf("Error\n");
-			exit(100);
-		}
-		result = (*get_op_func(argv[2]))(int1, int2);
-	}
-	else
-	{
-	printf("Error\n");
-	exit(99);
-	}
-
-
-
-
-
+	return (0);
 }
