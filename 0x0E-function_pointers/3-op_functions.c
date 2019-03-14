@@ -9,8 +9,7 @@
 */
 int op_add(int a, int b)
 {
-	if (isdigit(a) && isdigit(b))
-		return (a + b);
+	return (a + b);
 }
 /**
 * op_sub - returns the difference between two integers
@@ -21,8 +20,7 @@ int op_add(int a, int b)
 */
 int op_sub(int a, int b)
 {
-	if (isdigit(a) && isdigit(b))
-		return (a - b);
+	return (a - b);
 }
 /**
 * op_mul - returns the product of two integers
@@ -33,8 +31,7 @@ int op_sub(int a, int b)
 */
 int op_mul(int a, int b)
 {
-	if (isdigit(a) && isdigit(b))
-		return (a * b);
+	return (a * b);
 }
 /**
 * op_div - returns division of a by b
@@ -45,7 +42,12 @@ int op_mul(int a, int b)
 */
 int op_div(int a, int b)
 {
-	if (isdigit(a) && isdigit(b))
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	else
 		return (a / b);
 }
 /**
@@ -57,6 +59,11 @@ int op_div(int a, int b)
 */
 int op_mod(int a, int b)
 {
-	if (isdigit(a) && isdigit(b))
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	else
 		return (a % b);
 }
