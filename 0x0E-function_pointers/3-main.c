@@ -21,6 +21,11 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(99);
+		if ((o == '/' || o == '%') && int2 == 0)
+		{
+			printf("Error\n");
+			exit(100);
+		}
 	}
 	int1 = atoi(argv[1]);
 	int2 = atoi(argv[3]);
