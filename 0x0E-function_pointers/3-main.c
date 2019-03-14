@@ -22,10 +22,8 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	{
-		int1 = atoi(argv[1]);
-		int2 = atoi(argv[3]);
-	}
+	int1 = atoi(argv[1]);
+	int2 = atoi(argv[3]);
 	result = (*get_op_func(argv[2]))(int1, int2);
 	printf("%d\n", result);
 	return (0);
