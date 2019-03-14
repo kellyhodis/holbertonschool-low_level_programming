@@ -2,7 +2,7 @@
 #define FUNC_PTR_H
 
 #define size_t unsigned long
-#define op_t char
+#define op_t (char *)
 
 int _putchar(char c);
 void print_name(char *name, void (*f)(char *));
