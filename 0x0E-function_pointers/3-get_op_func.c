@@ -20,7 +20,9 @@ int (*get_op_func(char *s))(int a, int b)
 	while (i < 6)
 	{
 		if (s[0] == ops[i][0])
-			return((*ops[i][1])(a, b));
+		{
+			f = ops[i][1];
+			return((*f)(a, b));
 		i++;
 	}
 	return (NULL);
