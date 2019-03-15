@@ -34,6 +34,8 @@ void print_string(char *s)
 {
         if (s)
                 printf("%s", s);
+	else
+		printf("%s", "(nil)");
 }
 /**
 * print_c - prints a char value
@@ -71,8 +73,8 @@ void print_all(const char * const format, ...)
         int i = 0;
         void *memallo = malloc(strlen(format) + 1);
 	char *form = memallo;
-	char *iterate;
 	int param;
+	int count = 0;
 
         strcpy(form, format);
         va_start(listva, format);
@@ -83,18 +85,18 @@ void print_all(const char * const format, ...)
 			param = va_arg(listva, int);
 			get_type(form[i], param);
 		}
-		if (form[i] == 'f')
+		while ((form[i] == 'f' || form[i] == 's') && count == 0)
 		{
+			if (form[i] == 's')
+			{
+				print_string(va_arg(listva, char*));
+				count++;
+				break;
+			}
 			print_numf(va_arg(listva, double));
+			count++;
 		}
-
-		if (form[i] == 's')
-		{
-			iterate = va_arg(listva, char*);
-			if (!iterate)
-				iterate = "(nil)";
-			print_string(iterate);
-		}
+		count--;
                 i++;
         }
         va_end(listva);
