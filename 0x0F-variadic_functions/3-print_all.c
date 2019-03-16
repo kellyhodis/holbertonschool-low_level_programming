@@ -3,16 +3,21 @@
 #include <string.h>
 #include <stdarg.h>
 #include <stdlib.h>
+typedef struct op
+{
+	char s;
+	void (*f)(va_list list);
+} type;
+
 /**
 * print_c - prints a char value
 * @c: char to print
 *
 * Return: nothing
 */
-void print_c(char c)
+void print_c(va_list list)
 {
-        if (c)
-                printf("%c", c);
+	printf("%c", va_arg(list, int));
 }
 /**
 * print_numf - prints a float value
@@ -20,9 +25,9 @@ void print_c(char c)
 *
 * Return: nothing
 */
-void print_numf(double num)
+void print_numf(va_list list)
 {
-        printf("%f", num);
+        printf("%f", va_arg(list, double));
 }
 /**
 * print_string - prints a string
@@ -30,12 +35,13 @@ void print_numf(double num)
 *
 * Return: nothing
 */
-void print_string(char *s)
+void print_string(va_list list)
 {
-        if (s)
-                printf("%s", s);
-	else
-		printf("%s", "(nil)");
+	char *s;
+       	s = va_arg(list, char*);
+	if (!s)
+		s = "(nil)";
+	printf("%s", s);
 }
 /**
 * print_c - prints a char value
@@ -43,24 +49,10 @@ void print_string(char *s)
 *
 * Return: nothing
 */
-void print_numi(int c)
+void print_numi(va_list list)
 {
-	printf("%d", c);
+	printf("%d", va_arg(list, int));
 }
-/**
-* get_type - calls the correct function based on type
-* @vartype: character that stands for variable type
-*
-* Return: nothing
-*/
-void get_type(char c, int param)
-{
-	if (c == 'c')
-		print_c(param);	
-	else if (c == 'i')
-		print_numi(param);
-}
-
 /**
 * print_all - prints anything
 * @format: list of types of arguments passed to the function
@@ -69,38 +61,41 @@ void get_type(char c, int param)
 */
 void print_all(const char * const format, ...)
 {
-        va_list listva;
         int i = 0;
-        void *memallo = malloc(strlen(format) + 1);
+	int j = 0;
+	char *separator = ", ";
+	void *memallo = malloc(strlen(format) + 1);
 	char *form = memallo;
-	int param;
+/*	int param;
 	int count = 0;
 
-        strcpy(form, format);
-        va_start(listva, format);
-        while (form[i] != '\0')
+*/
+	type array[] = {
+		{'i', print_numi},
+		{'s', print_string},
+		{'c', print_c},
+		{'f', print_numf},
+		{'\0', NULL}};
+	va_list list;
+	strcpy(form, format);
+        va_start(list, format);
+	while (form[i] != '\0')
 	{
-		if (form[i] == 'c' || form[i] == 'i')
+		while (array[j].s != '\0')
 		{
-			param = va_arg(listva, int);
-			get_type(form[i], param);
-		}
-		while ((form[i] == 'f' || form[i] == 's') && count == 0)
-		{
-			if (form[i] == 's')
+			if (form[i] == array[j].s)
 			{
-				print_string(va_arg(listva, char*));
-				count++;
-				break;
+				array[j].f(list);
+				if (form[i + 1] != '\0')
+					printf("%s", separator);
 			}
-			print_numf(va_arg(listva, double));
-			count++;
+			j++;
 		}
-		count--;
-                i++;
+		i++;
+		j = 0;
         }
-        va_end(listva);
 	free(memallo);
         printf("\n");
+	va_end(list);
 }
 
