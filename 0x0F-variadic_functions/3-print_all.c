@@ -64,12 +64,6 @@ void print_all(const char * const format, ...)
         int i = 0;
 	int j = 0;
 	char *separator = ", ";
-	void *memallo = malloc(strlen(format) + 1);
-	char *form = memallo;
-/*	int param;
-	int count = 0;
-
-*/
 	type array[] = {
 		{'i', print_numi},
 		{'s', print_string},
@@ -77,16 +71,16 @@ void print_all(const char * const format, ...)
 		{'f', print_numf},
 		{'\0', NULL}};
 	va_list list;
-	strcpy(form, format);
+
         va_start(list, format);
-	while (form[i] != '\0')
+	while (format[i] != '\0')
 	{
 		while (array[j].s != '\0')
 		{
-			if (form[i] == array[j].s)
+			if (format[i] == array[j].s)
 			{
 				array[j].f(list);
-				if (form[i + 1] != '\0')
+				if (format[i + 1] != '\0')
 					printf("%s", separator);
 			}
 			j++;
@@ -94,7 +88,6 @@ void print_all(const char * const format, ...)
 		i++;
 		j = 0;
         }
-	free(memallo);
         printf("\n");
 	va_end(list);
 }
