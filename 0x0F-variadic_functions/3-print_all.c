@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0;
 	int j = 0;
-	char *separator = ", ";
+	char *separator = "";
 	type array[] = {
 		{'i', print_numi},
 		{'s', print_string},
@@ -74,7 +74,9 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == array[j].s)
 			{
+				printf("%s", separator);
 				array[j].f(list);
+				separator = ", ";
 			}
 			j++;
 		}
