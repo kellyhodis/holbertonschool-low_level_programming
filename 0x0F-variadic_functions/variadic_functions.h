@@ -1,6 +1,18 @@
 #ifndef VARIADIC_H
 #define VARIADIC_H
 
+#include <stdarg.h>
+/**
+* struct op - holds character to match and function pointer
+* @s: character to match
+* @f: function pointer
+*/
+typedef struct op
+{
+	char s;
+	void (*f)(va_list list);
+} type;
+
 int _putchar(char *c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
