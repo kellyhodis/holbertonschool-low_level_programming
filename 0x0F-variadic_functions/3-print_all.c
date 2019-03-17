@@ -21,7 +21,7 @@ void print_c(va_list list)
 */
 void print_numf(va_list list)
 {
-	printf("%f", va_arg(list, double))
+	printf("%f", va_arg(list, double));
 }
 /**
 * print_string - prints a string
