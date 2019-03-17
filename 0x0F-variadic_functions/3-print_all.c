@@ -39,7 +39,7 @@ void print_string(va_list list)
 	printf("%s", s);
 }
 /**
-* print_numi = prints an integer
+* print_numi - prints an integer
 * @list: list from which to extract argument
 *
 * Return: nothing
