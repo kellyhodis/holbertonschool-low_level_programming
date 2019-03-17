@@ -19,4 +19,9 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
+void print_c(va_list list);
+void print_numf(va_list list);
+void print_string(va_list list);
+void print_numi(va_list list);
+
 #endif /* VARIADIC_H */
