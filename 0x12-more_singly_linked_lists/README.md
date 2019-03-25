@@ -1,7 +1,7 @@
 This is a project to understand how to use linked lists in C. Part of the Holberton School curriculum. 
 
 Using the supplied struct: 
-
+```
 /**
  * struct listint_s - singly linked list
  * @n: integer
@@ -15,7 +15,7 @@ typedef struct listint_s
     int n;
     struct listint_s *next;
 } listint_t;
-
+```
 0-print_listint.c - function that prints all the elements of a listint_t list.
 
 1-listint_len.c - function that returns the number of elements in a linked listint_t list.
