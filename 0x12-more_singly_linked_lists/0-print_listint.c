@@ -15,7 +15,7 @@ size_t print_listint(const listint_t *h)
 	/* checks if struct exists */
 	if (!h)
 		return (0);
-	/* as long as the current node points to another node */
+	/* as long as the current node exists */
 	while (h)
 	{
 		printf("%d\n", h->n);
