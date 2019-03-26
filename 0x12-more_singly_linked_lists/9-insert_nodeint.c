@@ -45,7 +45,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	/* if the number of nodes do not amount to desired index return NULL */
 	if (count != idx)
+	{
+		free(new);
 		return (NULL);
+	}
 	/* point head back to first node */
 	*head = place;
 	return (new);
