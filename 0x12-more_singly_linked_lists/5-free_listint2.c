@@ -12,6 +12,10 @@ void free_listint2(listint_t **head)
 	/* placeholder */
 	listint_t *place;
 
+	/* check if *head exists */
+	if (!head)
+		return;
+	
 	/* perform only if head exists */
 	while (*head)
 	{
