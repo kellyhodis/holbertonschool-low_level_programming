@@ -9,19 +9,17 @@ char *leet(char *l337)
 {
 	char letter[] = "aAeEoOtTlL";
 	char num[] = "4433007711";
-	int i, j;
+	int i = 0, j;
 
-	while (*l337)
+	while (l337[i])
 	{
-		for (i = 0; i < 10; i++)
+		for (j = 0; j < 10; j++)
 		{
-			for (j = 0; l337[j]; j++)
-			{
-				if (letter[i] == l337[j])
-					l337[j] = num[i];
-			}
+
+			if (letter[j] == l337[i])
+				l337[i] = num[j];
 		}
-		l337++;
+		i++;
 	}
 	return (l337);
 }
