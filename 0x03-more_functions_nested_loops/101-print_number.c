@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
 * print_number - prints a number
 * @n: number to print
@@ -9,11 +8,12 @@
 void print_number(int n)
 {
 	int i, remain, num, x, j = 0, divide = 1;
+	unsigned int num;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		num = -n;
 	}
 	remain = n % 10;
 	num = n;
