@@ -11,7 +11,10 @@ void print_number(int n)
 	int i, num, remain, x, j = 0, divide = 1, flag = 0;
 
 	if (n == INT_MIN)
+	{
 		flag = 1;
+		n = INT_MIN + 1;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
