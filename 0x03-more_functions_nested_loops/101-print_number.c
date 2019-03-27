@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <limits.h>
 /**
 * print_number - prints a number
 * @n: number to print
@@ -7,13 +8,14 @@
 */
 void print_number(int n)
 {
-	int i, remain, num, x, j = 0, divide = 1;
-	unsigned int num;
+	int i, num, remain, x, j = 0, divide = 1, flag = 0;
 
+	if (n == INT_MIN)
+		flag = 1;
 	if (n < 0)
 	{
 		_putchar('-');
-		num = -n;
+		n = -n;
 	}
 	remain = n % 10;
 	num = n;
@@ -30,5 +32,8 @@ void print_number(int n)
 		_putchar(x + '0');
 		divide /= 10;
 	}
-	_putchar(remain + '0');
+	if (flag == 1)
+		_putchar(remain + '1');
+	else
+		_putchar(remain + '0');
 }
