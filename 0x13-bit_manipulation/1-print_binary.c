@@ -15,21 +15,14 @@ void print_binary(unsigned long int n)
 		decimal *= 2;
 		c++;
 	}
-
 	if (n == 0)
 	{
 		_putchar('0');
 		return;
 	}
-	if (n == 1)
-	{
-		_putchar('1');
-		return;
-	}
 	for (c = c - 1; c >= 0; c--)
 	{
 		shift = n >> c;
-
 		if (shift & 1)
 			_putchar('1');
 		else
