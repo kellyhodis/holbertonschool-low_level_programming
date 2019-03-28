@@ -16,22 +16,19 @@ void print_binary(unsigned long int n)
 			_putchar('0');
 		else if (n == 1)
 			_putchar('1');
-
 		return;
 	}
-	while (decimal < ULONG_MAX && decimal < n)
+	while (decimal < ULONG_MAX && (decimal * 2) <= n)
 		decimal *= 2;
-	while (decimal > 1)
+	while (decimal >= 1)
 	{
 		if (num + decimal <= n)
+		{
 			_putchar('1');
+			num += decimal;
+		}
 		else
 			_putchar('0');
 		decimal /= 2;
-		if (num == n)
-		{
-			_putchar('\n');
-			break;
-		}
 	}
 }
