@@ -7,7 +7,7 @@
 */
 void print_binary(unsigned long int n)
 {
-	int c = 0;
+	int c = 0, cmax = sizeof(unsigned long int) * 8;
 	unsigned long int shift, decimal = 1;
 
 	while (decimal <= n)
@@ -20,6 +20,8 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
+	if (c > cmax)
+		c = cmax;
 	for (c = c - 1; c >= 0; c--)
 	{
 		shift = n >> c;
