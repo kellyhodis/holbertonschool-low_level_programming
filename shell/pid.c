@@ -12,9 +12,7 @@ int main(void)
 
     my_pid = getpid();
     my_ppid = getppid();
-    my_pidmax = INT_MAX;
     printf("%u\n", my_pid);
     printf("%u\n", my_ppid);
-    printf("%u\n", my_pidmax);
     return (0);
 }
