@@ -18,7 +18,7 @@ void copy(int from, int to, char *file_from, char *file_to)
 		read_from = read(from, buffer, 1024);
 		if (read_from == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
 		write_to = write(to, buffer, read_from);
@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	copy(fd_from, fd_to, argv[1], argv[2]);
