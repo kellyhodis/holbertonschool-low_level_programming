@@ -21,7 +21,8 @@ void copy(int from, int to, char *file_from, char *file_to)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
-		write_to = write(to, buffer, read_from);
+		if (read_from > 0)
+			write_to = write(to, buffer, read_from);
 		if (write_to == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
