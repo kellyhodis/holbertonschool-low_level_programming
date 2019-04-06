@@ -26,5 +26,7 @@ typedef struct list_s
 
 list_t *add_node_end(list_t **head, const char *str);
 char *_getenv(const char *name);
+int _setenv(const char *name, const char *value, int overwrite);
+int _unsetenv(const char *name);
 
 #endif /* HOLBERTON_H */
