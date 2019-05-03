@@ -19,6 +19,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	traverse = *head;
 	if (!traverse)
 	{
+		free(new);
 		return (add_dnodeint(head, n));
 	}
 
