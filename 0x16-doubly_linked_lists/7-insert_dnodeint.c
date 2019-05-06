@@ -20,29 +20,30 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	count = 0;
 	new->n = n;
 	traverse = *h;
-	if (traverse && count == idx)
+	if (count == idx)
 	{
 		new->prev = NULL;
-		new->next = traverse;
-		traverse->prev = new;
+		if (traverse)
+		{
+			new->next = traverse;
+			traverse->prev = new;
+		}
+		else
+			new->next = NULL;
 		*h = new;
 		return (new);
 	}
 	while (traverse && count != idx)
 	{
 		count++;
-		if (count == idx)
+		if (count == idx || count + 1 == idx)
 		{
-			new->next = traverse->next;
+			if (!traverse->next)
+				new->next = NULL;
+			else
+				new->next = traverse->next;
 			new->prev = traverse;
 			traverse->next = new;
-			return (new);
-		}
-		if (!traverse->next && count + 1 == idx)
-		{
-			traverse->next = new;
-			new->prev = traverse;
-			new->next = NULL;
 			return (new);
 		}
 		traverse = traverse->next;
