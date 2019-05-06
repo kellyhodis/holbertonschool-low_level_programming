@@ -11,7 +11,7 @@
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	unsigned int count;
-	dlistint_t *traverse = *head;
+	dlistint_t *traverse = *head, *hold;
 
 	if (!traverse)
 		return (-1);
@@ -32,6 +32,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if (!traverse || !traverse->next)
 			return (-1);
 	}
+	hold = traverse->next;
 	if (traverse->next->next)
 	{
 		traverse->next->next->prev = traverse;
@@ -39,6 +40,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	else if (traverse->next)
 		traverse->next = NULL;
+	free(hold);
 	return (1);
 }
 
