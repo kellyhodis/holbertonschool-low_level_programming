@@ -1,14 +1,14 @@
 #include "lists.h"
 
 /**
-* add_dnodeint - add a new node at the beginning of a doubly linked list
+* add_dnode - add a new node at the beginning of a doubly linked list
 * @head: head of the list
 * @n: number to insert in the new node
 *
 * Return: address of new element or NULL
 */
 
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnode(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
 
@@ -46,7 +46,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	if (!traverse)
 	{
 		free(new);
-		return (add_dnodeint(head, n));
+		return (add_dnode(head, n));
 	}
 
 	while (traverse->next)
