@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 dog.h - a new type struct dog with listed elements.
 
 1-init_dog.c - a function that initialize a variable of type struct dog.
