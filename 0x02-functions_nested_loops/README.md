@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 This is a project folder for C programs using functions and nested loops. 
 
 0-holberton.c - A program that prints "Holberton" followed by a new line.
