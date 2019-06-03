@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 holberton.h - header file containing function prototypes and libraries.
 
 0-read_textfile.c - function that reads a text file and prints it to the POSIX standard output.

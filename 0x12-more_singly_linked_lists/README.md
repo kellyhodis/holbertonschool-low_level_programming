@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 This is a project to understand how to use linked lists in C. Part of the Holberton School curriculum. 
 
 Using the supplied struct: 

@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 This is a folder containing exercises for the purpose of learning about linked lists in C. 
 
 0-print_list.c - a function that prints all the elements of a list_t list

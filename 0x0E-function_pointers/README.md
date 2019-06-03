@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 Task 0:
 0-print_name.c - a function that prints a name.
 

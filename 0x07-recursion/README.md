@@ -1,3 +1,5 @@
+![C logo](https://seeklogo.com/images/C/c-programming-language-logo-9B32D017B1-seeklogo.com.png)
+
 0-puts_recursion.c - function that prints a string, followed by a new line.
 
 1-print_rev_recursion.c - function that prints a string in reverse.
