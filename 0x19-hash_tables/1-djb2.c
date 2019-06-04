@@ -1,12 +1,19 @@
-#include "hash_table.h"
-/* be sure to keep memory clean! */
+#include "hash_tables.h"
+
+/**
+ * hash_djb2 - hash function implementing djb2 algorithm
+ * @str: string to hash
+ *
+ * Return: hash
+ */
 
 unsigned long int hash_djb2(const unsigned char *str)
 {
-	/* declare variables */
+	unsigned long int hash = 5381;
+	int c;
 
-	/* hash function */
-	/* djb2 algorithm */
+	while ((c = *str++))
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
 
-	/* return an unsigned long int (hash value) */
+	return (hash);
 }
