@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index = 0;
 
 	/* key cannot be empty string */
-	if (!key || key[0] == '\0') 
+	if (!key || key[0] == '\0')
 		return (0);
 
 	/* allocate memory for new element */
