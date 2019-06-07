@@ -18,14 +18,14 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	/* allocate memory for the hash table */
-	new_table = malloc(sizeof(hash_table_t));
+	new_table = calloc(1, sizeof(hash_table_t));
 
 	/* check for memory allocation error */
 	if (!new_table)
 		return (NULL);
 
 	/* allocate memory for the hash node */
-	new_array = malloc(size * sizeof(hash_node_t *));
+	new_array = calloc(size, sizeof(hash_node_t *));
 
 	/* check for memory allocation error */
 	if (!new_array)
