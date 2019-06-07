@@ -11,16 +11,15 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index = 0;
+	hash_node_t *placeholder;
 
-	index = hash_djb2((const unsigned char *)key);
-
-	while (ht->array[index]->next)
+	index = key_index((const unsigned char *)key, ht->size);
+	placeholder = ht->array[index];
+	while (placeholder)
 	{
-		if (strcmp(key, ht->array[index]->key) == 0)
-			return (ht->array[index]->value);
-		ht->array[index] = ht->array[index]->next;
+		if (strcmp(key, placeholder->key) == 0)
+			return (placeholder->value);
+		placeholder = placeholder->next;
 	}
-	if (strcmp(key, (ht->array[index])->key) == 0)
-		return (ht->array[index]->value);
 	return (NULL);
 }
