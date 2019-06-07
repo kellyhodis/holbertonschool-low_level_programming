@@ -12,7 +12,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	/* declare variables */
-	hash_node_t *new;
+	hash_node_t *new, *placeholder;
 	unsigned long int index = 0;
 
 	/* key cannot be empty string and ht cannot be NULL*/
@@ -35,20 +35,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		/* check to see if key exists already */
-		while (ht->array[index])
+		placeholder = ht->array[index];
+		while (placeholder)
 		{
-			if (strcmp(key, ht->array[index]->key) == 0)
+			if (strcmp(key, placeholder->key) == 0)
 			{
-				ht->array[index]->value = strdup(value);
+				placeholder->value = strdup(value);
 				free(new);
-				break;
+				return (1);
 			}
-			ht->array[index] = ht->array[index]->next;
+			placeholder = placeholder->next;
 		}
 		new->next = ht->array[index];
 		ht->array[index] = new;
 	}
-
 	/* return success */
 	return (1);
 }
