@@ -2,7 +2,10 @@
 
 This project in C is to learn sorting algorithms and their related Big O notations. 
 
-
+0. Bubble sort
+1. Insertion sort
+2. Selection sort
+3. Quicksort sort
 
 Given these functions:
 
