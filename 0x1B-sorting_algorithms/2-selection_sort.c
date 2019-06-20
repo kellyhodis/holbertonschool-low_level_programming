@@ -14,6 +14,10 @@ void selection_sort(int *array, size_t size)
 	int smallest_num;
 	int flag = 1;
 
+	if (!array)
+		return;
+	if (size < 2)
+		return;
 	n = 0;
 	while (flag)
 	{
