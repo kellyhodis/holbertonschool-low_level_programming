@@ -13,7 +13,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *hold, *swtch;
 
 	/* check that there is a list */
-	if (!run)
+	if (!list || !run)
 		return;
 
 	/* check that there are at least two elements starting from head */
