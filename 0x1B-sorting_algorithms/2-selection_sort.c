@@ -26,6 +26,7 @@ void selection_sort(int *array, size_t size)
 			if (i == n)
 			{
 				smallest_num = array[i];
+				idx = i;
 			}
 			if (array[i] < smallest_num)
 			{
