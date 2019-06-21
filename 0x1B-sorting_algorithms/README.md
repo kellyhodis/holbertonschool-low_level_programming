@@ -5,7 +5,15 @@ This project in C is to learn sorting algorithms and their related Big O notatio
 0. Bubble sort
 1. Insertion sort
 2. Selection sort
-3. Quicksort sort
+3. Quick Sort - Lomuto Partition Scheme
+4. Shell sort
+5. Cocktail Shaker sort
+6. Counting sort
+7. Merge sort
+8. Heap sort
+9. Radix sort
+10. Bitonic sort
+11. Quick Sort - Hoare Partition Scheme
 
 Given these functions:
 
