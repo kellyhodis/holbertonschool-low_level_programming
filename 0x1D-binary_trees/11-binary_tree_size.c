@@ -9,31 +9,12 @@
 
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-	int size;
-	const binary_tree_t *traverse;
+	if (!tree)
+		return (0);
 
-	/* add conditions for following nodes to right in left while loop
-	   add conditions for following nodes to left in right while loop */
-	if (tree)
-	{
-		size = 1;
-		traverse = tree;
-		while (traverse->left)
-		{
-			size++;
-			if (traverse->left->right)
-				size++;
-			traverse = traverse->left;
-		}
-		traverse = tree;
-		while (traverse->right)
-		{
-			size++;
-			if (traverse->right->left)
-				size++;
-			traverse = traverse->right;
-		}
-	}
+	if (!(tree->left) && !(tree->right))
+		return (1);
 
-	return (size);
+	return (1 + binary_tree_size(tree->left) \
+		+ binary_tree_size(tree->right));
 }
