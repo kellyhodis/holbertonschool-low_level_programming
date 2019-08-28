@@ -2,6 +2,10 @@
 
 ## Project to learn about search algorithms, linear and binary search, and space complexity.
 
+# Header files:
+
+search_algos.h
+
 
 # Algorithms:
 
